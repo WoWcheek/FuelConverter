@@ -49,6 +49,7 @@
             expensLB = new Label();
             label4 = new Label();
             pictureBox1 = new PictureBox();
+            clearButton = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -56,9 +57,9 @@
             // 
             MemuLB.AutoSize = true;
             MemuLB.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            MemuLB.Location = new Point(42, 39);
+            MemuLB.Location = new Point(37, 29);
             MemuLB.Name = "MemuLB";
-            MemuLB.Size = new Size(229, 32);
+            MemuLB.Size = new Size(180, 25);
             MemuLB.TabIndex = 0;
             MemuLB.Text = "Стоимость поездки";
             // 
@@ -66,9 +67,9 @@
             // 
             distLB.AutoSize = true;
             distLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            distLB.Location = new Point(42, 95);
+            distLB.Location = new Point(37, 71);
             distLB.Name = "distLB";
-            distLB.Size = new Size(115, 28);
+            distLB.Size = new Size(91, 21);
             distLB.TabIndex = 1;
             distLB.Text = "Расстояние";
             // 
@@ -76,9 +77,9 @@
             // 
             ordinaryConsumLB.AutoSize = true;
             ordinaryConsumLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ordinaryConsumLB.Location = new Point(42, 205);
+            ordinaryConsumLB.Location = new Point(37, 154);
             ordinaryConsumLB.Name = "ordinaryConsumLB";
-            ordinaryConsumLB.Size = new Size(242, 28);
+            ordinaryConsumLB.Size = new Size(188, 21);
             ordinaryConsumLB.TabIndex = 2;
             ordinaryConsumLB.Text = "Средний расход топлива";
             // 
@@ -86,46 +87,42 @@
             // 
             priceLB.AutoSize = true;
             priceLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            priceLB.Location = new Point(42, 329);
+            priceLB.Location = new Point(37, 247);
             priceLB.Name = "priceLB";
-            priceLB.Size = new Size(183, 28);
+            priceLB.Size = new Size(145, 21);
             priceLB.TabIndex = 3;
             priceLB.Text = "Стоимость 1 литра";
             // 
             // distTB
             // 
             distTB.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            distTB.Location = new Point(42, 127);
-            distTB.Margin = new Padding(3, 4, 3, 4);
+            distTB.Location = new Point(37, 95);
             distTB.Name = "distTB";
-            distTB.Size = new Size(242, 39);
+            distTB.Size = new Size(212, 33);
             distTB.TabIndex = 4;
             // 
             // ordinaryConsumTB
             // 
             ordinaryConsumTB.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ordinaryConsumTB.Location = new Point(42, 249);
-            ordinaryConsumTB.Margin = new Padding(3, 4, 3, 4);
+            ordinaryConsumTB.Location = new Point(37, 187);
             ordinaryConsumTB.Name = "ordinaryConsumTB";
-            ordinaryConsumTB.Size = new Size(242, 39);
+            ordinaryConsumTB.Size = new Size(212, 33);
             ordinaryConsumTB.TabIndex = 5;
             // 
             // priceTB
             // 
             priceTB.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            priceTB.Location = new Point(42, 361);
-            priceTB.Margin = new Padding(3, 4, 3, 4);
+            priceTB.Location = new Point(37, 271);
             priceTB.Name = "priceTB";
-            priceTB.Size = new Size(242, 39);
+            priceTB.Size = new Size(212, 33);
             priceTB.TabIndex = 6;
             // 
             // calculateBtn
             // 
             calculateBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            calculateBtn.Location = new Point(42, 432);
-            calculateBtn.Margin = new Padding(3, 4, 3, 4);
+            calculateBtn.Location = new Point(143, 329);
             calculateBtn.Name = "calculateBtn";
-            calculateBtn.Size = new Size(114, 67);
+            calculateBtn.Size = new Size(100, 50);
             calculateBtn.TabIndex = 7;
             calculateBtn.Text = "Расчитать";
             calculateBtn.UseVisualStyleBackColor = true;
@@ -135,9 +132,9 @@
             // 
             fuelLB.AutoSize = true;
             fuelLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            fuelLB.Location = new Point(42, 532);
+            fuelLB.Location = new Point(37, 399);
             fuelLB.Name = "fuelLB";
-            fuelLB.Size = new Size(341, 28);
+            fuelLB.Size = new Size(264, 21);
             fuelLB.TabIndex = 8;
             fuelLB.Text = "Необходимое количество топлива: ";
             // 
@@ -145,9 +142,9 @@
             // 
             fuelCountLB.AutoSize = true;
             fuelCountLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            fuelCountLB.Location = new Point(377, 532);
+            fuelCountLB.Location = new Point(330, 399);
             fuelCountLB.Name = "fuelCountLB";
-            fuelCountLB.Size = new Size(20, 28);
+            fuelCountLB.Size = new Size(17, 21);
             fuelCountLB.TabIndex = 9;
             fuelCountLB.Text = "_";
             // 
@@ -155,9 +152,9 @@
             // 
             priceTravelLB.AutoSize = true;
             priceTravelLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            priceTravelLB.Location = new Point(42, 588);
+            priceTravelLB.Location = new Point(37, 441);
             priceTravelLB.Name = "priceTravelLB";
-            priceTravelLB.Size = new Size(194, 28);
+            priceTravelLB.Size = new Size(153, 21);
             priceTravelLB.TabIndex = 10;
             priceTravelLB.Text = "Стоимость поездки:";
             // 
@@ -165,9 +162,9 @@
             // 
             uanLB.AutoSize = true;
             uanLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            uanLB.Location = new Point(377, 588);
+            uanLB.Location = new Point(330, 441);
             uanLB.Name = "uanLB";
-            uanLB.Size = new Size(20, 28);
+            uanLB.Size = new Size(17, 21);
             uanLB.TabIndex = 11;
             uanLB.Text = "_";
             // 
@@ -175,9 +172,9 @@
             // 
             dolLB.AutoSize = true;
             dolLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dolLB.Location = new Point(377, 645);
+            dolLB.Location = new Point(330, 484);
             dolLB.Name = "dolLB";
-            dolLB.Size = new Size(20, 28);
+            dolLB.Size = new Size(17, 21);
             dolLB.TabIndex = 12;
             dolLB.Text = "_";
             // 
@@ -185,9 +182,9 @@
             // 
             literLB.AutoSize = true;
             literLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            literLB.Location = new Point(491, 532);
+            literLB.Location = new Point(482, 399);
             literLB.Name = "literLB";
-            literLB.Size = new Size(27, 28);
+            literLB.Size = new Size(21, 21);
             literLB.TabIndex = 13;
             literLB.Text = "л.";
             // 
@@ -195,9 +192,9 @@
             // 
             uan2LB.AutoSize = true;
             uan2LB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            uan2LB.Location = new Point(491, 588);
+            uan2LB.Location = new Point(484, 441);
             uan2LB.Name = "uan2LB";
-            uan2LB.Size = new Size(48, 28);
+            uan2LB.Size = new Size(37, 21);
             uan2LB.TabIndex = 14;
             uan2LB.Text = "грн.";
             // 
@@ -205,9 +202,9 @@
             // 
             dol2LB.AutoSize = true;
             dol2LB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dol2LB.Location = new Point(491, 645);
+            dol2LB.Location = new Point(484, 484);
             dol2LB.Name = "dol2LB";
-            dol2LB.Size = new Size(23, 28);
+            dol2LB.Size = new Size(19, 21);
             dol2LB.TabIndex = 15;
             dol2LB.Text = "$";
             // 
@@ -215,9 +212,9 @@
             // 
             kmLb.AutoSize = true;
             kmLb.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kmLb.Location = new Point(302, 133);
+            kmLb.Location = new Point(264, 100);
             kmLb.Name = "kmLb";
-            kmLb.Size = new Size(40, 28);
+            kmLb.Size = new Size(32, 21);
             kmLb.TabIndex = 16;
             kmLb.Text = "км.";
             // 
@@ -225,9 +222,9 @@
             // 
             expensLB.AutoSize = true;
             expensLB.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            expensLB.Location = new Point(302, 255);
+            expensLB.Location = new Point(264, 191);
             expensLB.Name = "expensLB";
-            expensLB.Size = new Size(107, 28);
+            expensLB.Size = new Size(85, 21);
             expensLB.TabIndex = 17;
             expensLB.Text = "л / 100 км.";
             // 
@@ -235,9 +232,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(302, 367);
+            label4.Location = new Point(264, 275);
             label4.Name = "label4";
-            label4.Size = new Size(48, 28);
+            label4.Size = new Size(37, 21);
             label4.TabIndex = 18;
             label4.Text = "грн.";
             // 
@@ -245,19 +242,32 @@
             // 
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(517, 39);
+            pictureBox1.Location = new Point(452, 29);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(80, 80);
+            pictureBox1.Size = new Size(70, 60);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // clearButton
+            // 
+            clearButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            clearButton.Location = new Point(37, 329);
+            clearButton.Name = "clearButton";
+            clearButton.Size = new Size(100, 50);
+            clearButton.TabIndex = 20;
+            clearButton.Text = "Очистить";
+            clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clearButton_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(609, 685);
+            ClientSize = new Size(533, 514);
+            Controls.Add(clearButton);
             Controls.Add(pictureBox1);
             Controls.Add(label4);
             Controls.Add(expensLB);
@@ -278,9 +288,9 @@
             Controls.Add(ordinaryConsumLB);
             Controls.Add(distLB);
             Controls.Add(MemuLB);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -308,5 +318,6 @@
         private Label expensLB;
         private Label label4;
         private PictureBox pictureBox1;
+        private Button clearButton;
     }
 }
