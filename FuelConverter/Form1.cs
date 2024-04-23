@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using System.Drawing;
+
 namespace FuelConverter
 {
     public partial class Form1 : Form
@@ -47,9 +50,16 @@ namespace FuelConverter
                 price = double.Parse(priceTB.Text);
                 if (distans <= 0 || ordinary <= 0 || price <= 0)
                     throw new Exception();
+                else if (distans >= 1_000_000 || ordinary >= 1_000 || price >= 5_000)
+                {
+                    throw new Exception();
+                }
+
                 double expens = distans / 100 * ordinary;
+                expens = Math.Round(expens, 2);
                 fuelCountLB.Text = expens.ToString();
                 double priceDistansUAH = expens * price;
+                priceDistansUAH = Math.Round(priceDistansUAH, 2);
                 uanLB.Text = priceDistansUAH.ToString();
 
                 double priceDistansUSD = await Exchange.Convert(priceDistansUAH);
@@ -57,15 +67,29 @@ namespace FuelConverter
             }
             catch { MessageBox.Show("Неверно введены данные"); }
 
-            distTB.Text = "";
-            ordinaryConsumTB.Text = "";
-            priceTB.Text = "";
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             IsDarkTheme = !IsDarkTheme;
             SetTheme();
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            distTB.Text = "";
+            ordinaryConsumTB.Text = "";
+            priceTB.Text = "";
+
+            fuelCountLB.Text = "";
+            uanLB.Text = "";
+            dolLB.Text = "";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
