@@ -45,20 +45,21 @@ namespace FuelConverter
                 distans = double.Parse(distTB.Text);
                 ordinary = double.Parse(ordinaryConsumTB.Text);
                 price = double.Parse(priceTB.Text);
+                if (distans <= 0 || ordinary <= 0 || price <= 0)
+                    throw new Exception();
+                double expens = distans / 100 * ordinary;
+                fuelCountLB.Text = expens.ToString();
+                double priceDistansUAH = expens * price;
+                uanLB.Text = priceDistansUAH.ToString();
+
+                double priceDistansUSD = await Exchange.Convert(priceDistansUAH);
+                dolLB.Text = priceDistansUSD.ToString();
             }
             catch { MessageBox.Show("Неверно введены данные"); }
 
             distTB.Text = "";
             ordinaryConsumTB.Text = "";
             priceTB.Text = "";
-
-            double expens = distans / 100 * ordinary;
-            fuelCountLB.Text = expens.ToString();
-            double priceDistansUAH = expens * price;
-            uanLB.Text = priceDistansUAH.ToString();
-
-            double priceDistansUSD = await Exchange.Convert(priceDistansUAH);
-            dolLB.Text = priceDistansUSD.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
