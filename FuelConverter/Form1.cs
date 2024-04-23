@@ -2,29 +2,47 @@ namespace FuelConverter
 {
     public partial class Form1 : Form
     {
+        protected bool IsDarkTheme { get; set; }
+
         public Form1()
         {
             InitializeComponent();
-            
+            DateTime now = DateTime.Now;
+            if (now.Hour >= 19 || now.Hour <= 6)
+                IsDarkTheme = true;
+            else
+                IsDarkTheme = false;
+
+            SetTheme();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        protected void SetTheme()
         {
-
+            if (IsDarkTheme)
+            {
+                BackColor = Color.DimGray;
+                foreach (var control in Controls)
+                    if (control is Label)
+                        (control as Label).ForeColor = Color.White;
+                pictureBox1.Image = Image.FromFile("../../../images/dark_theme.png");
+            }
+            else
+            {
+                BackColor = Color.LightGray;
+                foreach (var control in Controls)
+                    if (control is Label)
+                        (control as Label).ForeColor = Color.Black;
+                pictureBox1.Image = Image.FromFile("../../../images/light_theme.png");
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void calculateBtn_Click(object sender, EventArgs e)
+        private async void calculateBtn_Click(object sender, EventArgs e)
         {
             double distans = 0, ordinary = 0, price = 0;
 
             try
             {
-                 distans = double.Parse(distTB.Text);
+                distans = double.Parse(distTB.Text);
                 ordinary = double.Parse(ordinaryConsumTB.Text);
                 price = double.Parse(priceTB.Text);
             }
@@ -39,9 +57,14 @@ namespace FuelConverter
             double priceDistansUAH = expens * price;
             uanLB.Text = priceDistansUAH.ToString();
 
+            double priceDistansUSD = await Exchange.Convert(priceDistansUAH);
+            dolLB.Text = priceDistansUSD.ToString();
+        }
 
-
-
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            IsDarkTheme = !IsDarkTheme;
+            SetTheme();
         }
     }
 }
